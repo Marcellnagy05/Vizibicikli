@@ -15,6 +15,22 @@ namespace ConsoleApp15
         int vOra;
         int vPerc;
 
+        public kolcsonzes(string csvSor)
+        {
+            var mezok = csvSor.Split(';');
+            this.nev = mezok[0];
+            this.jazon = mezok[1][0];
+            this.eOra = int.Parse(mezok[2]);
+            this.ePerc = int.Parse(mezok[3]);
+            this.vOra = int.Parse(mezok[4]);
+            this.vPerc = int.Parse(mezok[5]);
+        }
+
+        public int Idohossz()
+        {
+            return ((vOra*60) + vPerc) - ((eOra*60)+ePerc);
+        }
+
         public kolcsonzes(string nev, char jazon, int eOra, int ePerc, int vOra, int vPerc)
         {
             this.nev = nev;
